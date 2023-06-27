@@ -4,10 +4,8 @@ $req
 
 $imgURL = $req.hdurl
 $imgURL
-$date = (Get-Date).Date
-$dest = "E:\Photos\Space Images\img.png"
+$date = (Get-Date).Date.ToString("yyyyMMdd")
+$date
+$dest = "E:\Photos\Space Images\$date.png"
 
 Invoke-WebRequest $imgURL -OutFile $dest
-
-# new-item "C:\users\Louis\desktop\test" -Type Directory
-# New-Item "C:\users\Louis\desktop\test\$img.jpg"
