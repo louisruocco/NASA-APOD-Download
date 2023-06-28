@@ -6,6 +6,7 @@ $date = (Get-Date).Date.ToString("yyyyMMdd")
 $dest = "E:\Photos\Space Images\$date.png"
 
 Invoke-WebRequest $imgURL -OutFile $dest
+Invoke-Item $dest
 
 $regPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP"
 New-ItemProperty -Path $RegPath -Name LockScreenImagePath -Value $dest -PropertyType String -Force | Out-Null
